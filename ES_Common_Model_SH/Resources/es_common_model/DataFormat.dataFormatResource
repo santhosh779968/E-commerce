@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Product_Management="http://www.eniquesolutions.com/Product_Management" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_MtF1YQmNEe2aK4PoSQSYPA" name="es_common_model.DataFormat" type="dataformat:DataFormat">
+  <imports xmi:id="_WDOeUAmNEe2aK4PoSQSYPA" importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.eniquesolutions.com/Product_Management"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_MtF1YgmNEe2aK4PoSQSYPA" formatType="Delimiter separated" colSeparator="," colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="Carriage Return/Line Feed (windows)" fillCharacter="Space" schemaElementQName="Product_Management:Addproduct" fieldOffsetsStr="PRODUCT_ID(0,0)&#xA;PRODUCT_NAME(0,0)&#xA;BRAND_ID(0,0)&#xA;CATEGORY_ID(0,0)&#xA;MODEL_YEAR(0,0)&#xA;LIST_PRICE(0,0)">
+    <fieldOffsets xmi:id="_WEIdQAmNEe2aK4PoSQSYPA" name="PRODUCT_ID"/>
+    <fieldOffsets xmi:id="_WEIdQQmNEe2aK4PoSQSYPA" name="PRODUCT_NAME"/>
+    <fieldOffsets xmi:id="_WEIdQgmNEe2aK4PoSQSYPA" name="BRAND_ID"/>
+    <fieldOffsets xmi:id="_WEIdQwmNEe2aK4PoSQSYPA" name="CATEGORY_ID"/>
+    <fieldOffsets xmi:id="_WEIdRAmNEe2aK4PoSQSYPA" name="MODEL_YEAR"/>
+    <fieldOffsets xmi:id="_WEIdRQmNEe2aK4PoSQSYPA" name="LIST_PRICE"/>
+  </jndi:configuration>
+</jndi:namedResource>

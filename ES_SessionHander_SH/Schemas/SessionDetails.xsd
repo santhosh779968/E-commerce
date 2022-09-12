@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.org/SessionDetails" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.org/SessionDetails">
+
+    <element name="Sessions" type="tns:SessionsType"></element>
+    
+    <complexType name="SessionsType">
+    	<sequence>
+    		<element name="session" type="tns:SessionType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Session" type="tns:SessionType"></element>
+    
+    <complexType name="SessionType">
+    	<sequence>
+    		<element name="SessionID" type="string"></element>
+    		<element name="dateTime" type="dateTime"></element>
+    		<element name="CustomerID" type="string"></element>
+    		<element name="Is_Active" type="boolean"></element>
+    	</sequence>
+    </complexType>
+</schema>

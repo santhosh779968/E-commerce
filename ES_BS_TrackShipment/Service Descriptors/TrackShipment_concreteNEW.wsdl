@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tibex="http://www.tibco.com/bs3.2/extensions" xmlns:tns="http://www.tibco.com/TrackShipment/" xmlns:tns0="http://www.eniquesolutions.com/ResponseStatus" xmlns:tns1="http://www.eniquesolutions.org/Orders" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TrackShipment" targetNamespace="http://www.tibco.com/TrackShipment/" tibex:src="file:/C:/Bw6_Workspace/MiniProject/WSDLfiles/TrackShipment_concreteNEW.wsdl">
+    
+  <wsdl:types>
+        
+    <xsd:schema xmlns:tns="http://www.eniquesolutions.com/ResponseStatus" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.com/ResponseStatus">
+            
+      <xsd:element name="Status" type="tns:StatusType"/>
+            
+      <xsd:complexType name="StatusType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="Status" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:complexType name="StatusArray">
+                
+        <xsd:sequence>
+                    
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Status" type="tns:StatusType"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:element name="StatusArray" type="tns:StatusArray"/>
+            
+      <xsd:complexType name="integerArray">
+                
+        <xsd:sequence>
+                    
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="integer" type="xsd:integer"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:element name="integerArray" type="tns:integerArray"/>
+            
+      <xsd:complexType name="stringArray">
+                
+        <xsd:sequence>
+                    
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="string" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:element name="stringArray" type="tns:stringArray"/>
+          
+    </xsd:schema>
+        
+    <xsd:schema xmlns:tns="http://www.eniquesolutions.org/Orders" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.org/Orders">
+            
+      <xsd:element name="Orders" type="tns:OrdersType"/>
+            
+      <xsd:element name="Order" type="tns:OrderType"/>
+            
+      <xsd:complexType name="OrderType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="ORDER_ID" type="xsd:string"/>
+                    
+          <xsd:element name="CUSTOMER_ID" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="PRODUCT_ID" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="QUANTITY" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="LIST_PRICE" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="DISCOUNT" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORDER_STATUS" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORDER_DATE" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="REQUIRED_DATE" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="SHIPPED_DATE" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:complexType name="OrdersType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Order" type="tns:OrderType"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:element name="OrderID" type="tns:OrderIDType"/>
+            
+      <xsd:complexType name="OrderIDType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="OrderID" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:element name="OrderShimentReq" type="tns:OrderShipmentReqType"/>
+            
+      <xsd:complexType name="OrderShipmentReqType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="OrderID" type="xsd:string"/>
+                    
+          <xsd:element name="Status" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+          
+    </xsd:schema>
+      
+  </wsdl:types>
+    
+  <wsdl:message name="UpdateShipmentRequest">
+        
+    <wsdl:part element="tns1:OrderShimentReq" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="UpdateShipmentResponse">
+        
+    <wsdl:part element="tns0:Status" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="TrackShipmentRequest">
+        
+    <wsdl:part element="tns1:OrderID" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="TrackShipmentResponse">
+        
+    <wsdl:part element="tns0:Status" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:portType name="TrackShipment">
+        
+    <wsdl:operation name="UpdateShipment">
+            
+      <wsdl:input message="tns:UpdateShipmentRequest"/>
+            
+      <wsdl:output message="tns:UpdateShipmentResponse"/>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="TrackShipment">
+            
+      <wsdl:input message="tns:TrackShipmentRequest"/>
+            
+      <wsdl:output message="tns:TrackShipmentResponse"/>
+          
+    </wsdl:operation>
+      
+  </wsdl:portType>
+    
+  <wsdl:binding name="SOAPServiceBinding" type="tns:TrackShipment">
+        
+    <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+        
+    <jms:binding messageFormat="bytes"/>
+        
+    <wsdl:operation name="UpdateShipment">
+            
+      <soap:operation soapAction="UpdateShipment" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="TrackShipment">
+            
+      <soap:operation soapAction="TrackShipment" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+      
+  </wsdl:binding>
+    
+  <wsdl:service name="TrackShipment">
+        
+    <wsdl:port binding="tns:SOAPServiceBinding" name="TrackShipmentSOAP">
+            
+      <soap:address location=""/>
+            
+      <jms:connectionFactory/>
+            
+      <jms:targetAddress destination="queue">SampleQueue</jms:targetAddress>
+          
+    </wsdl:port>
+      
+  </wsdl:service>
+  
+</wsdl:definitions>

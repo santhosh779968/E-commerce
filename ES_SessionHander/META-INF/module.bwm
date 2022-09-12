@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:parameters="http://xmlns.example.com/Login/parameters" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_yFmPcMwtEeyD-e9ODluHxQ" targetNamespace="http://tns.tibco.com/bw/composite/ES_SessionHander" name="ES_SessionHander" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_Cly8INAwEeymSL9HI_CBdw" name="login" promote="ComponentLogin/login">
+    <sca:interface.wsdl xmi:id="_Cl_JYNAwEeymSL9HI_CBdw" interface="http://xmlns.example.com/20220510123848PLT#wsdl.interface(login)" scaext:wsdlLocation="../Processes/es_sessionhander/Login.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_CmMkwNAwEeymSL9HI_CBdw" name="RestService" path="/login" docBasePath="http://localhost:7777/ES_SessionHander" docResourcePath="Login" basePath="/" connector="es_common_model.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/es_sessionhander.Login-Login.json">
+      <operation xmi:id="_CmdDcNAwEeymSL9HI_CBdw" operationName="post" nickname="post-login" httpMethod="POST" notes="postLogin" responseStyle="element" requestStyle="element" outputPartName="item">
+        <parameters xmi:id="_6M_90NAyEeymSL9HI_CBdw" formElement="parameters:loginPostForm"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_Cnm6ANAwEeymSL9HI_CBdw"/>
+      <advancedConfig xmi:id="_CmMkwdAwEeymSL9HI_CBdw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_CmdDcdAwEeymSL9HI_CBdw" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_NP-X0PFWEeyCL8oMts9IuA" name="logout" promote="ComponentLogout/logout">
+    <sca:interface.wsdl xmi:id="_NQO2gPFWEeyCL8oMts9IuA" interface="http://xmlns.example.com/20220621165246PLT#wsdl.interface(logout)" scaext:wsdlLocation="../Processes/es_sessionhander/Logout.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_NQ3IoPFWEeyCL8oMts9IuA" name="RestService1" path="/logout" docBasePath="http://localhost:7777/ES_SessionHander" docResourcePath="Logout" basePath="/" connector="es_common_model.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/es_sessionhander.Logout-Logout.json">
+      <operation xmi:id="_NRmvgPFWEeyCL8oMts9IuA" operationName="get" nickname="get-logout" httpMethod="GET" notes="getLogout" responseStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_NSzCUPFWEeyCL8oMts9IuA"/>
+      <advancedConfig xmi:id="_NQ3IofFWEeyCL8oMts9IuA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_NRnWkPFWEeyCL8oMts9IuA" bindingName="RestService1"/>
+  </sca:service>
+  <sca:property xmi:id="_ztfaUMwtEeyD-e9ODluHxQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ztn9MMwtEeyD-e9ODluHxQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ztrnkMwtEeyD-e9ODluHxQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ztxHIMwtEeyD-e9ODluHxQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_zt0xgMwtEeyD-e9ODluHxQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_zt5C8MwtEeyD-e9ODluHxQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_zt9UYMwtEeyD-e9ODluHxQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_zuA-wMwtEeyD-e9ODluHxQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_zuFQMMwtEeyD-e9ODluHxQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_3U7s4NAkEeymSL9HI_CBdw" name="/LoginCredentials/UserID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_ClbvwNAwEeymSL9HI_CBdw" name="ComponentLogin" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ClbvwdAwEeymSL9HI_CBdw" processName="es_sessionhander.Login"/>
+    <sca:service xmi:id="_ClqZQNAwEeymSL9HI_CBdw" name="login">
+      <sca:interface.wsdl xmi:id="_Cls1gNAwEeymSL9HI_CBdw" interface="http://xmlns.example.com/20220510123848PLT#wsdl.interface(login)" scaext:wsdlLocation="../Processes/es_sessionhander/Login.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_ebn2YPFUEeyCL8oMts9IuA" name="ComponentLogout" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ebn2YfFUEeyCL8oMts9IuA" processName="es_sessionhander.Logout"/>
+    <sca:service xmi:id="_NP4RMPFWEeyCL8oMts9IuA" name="logout">
+      <sca:interface.wsdl xmi:id="_NP6GYPFWEeyCL8oMts9IuA" interface="http://xmlns.example.com/20220621165246PLT#wsdl.interface(logout)"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_07-TQBuYEe2L17GurdxeaA" name="ComponentTimerProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_07-6UBuYEe2L17GurdxeaA" processName="es_sessionhander.TimerProcess"/>
+  </sca:component>
+</sca:composite>

@@ -1,0 +1,53 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "LoginResource",
+    "description" : "LoginResource service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/loginresource" : {
+      "post" : {
+        "summary" : "postLoginResource",
+        "description" : "postLoginResource",
+        "operationId" : "post-loginresource",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/LoginReq"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "LoginReq" : {
+      "type" : "object",
+      "required" : [ "UserID", "Password" ],
+      "properties" : {
+        "UserID" : {
+          "type" : "string"
+        },
+        "Password" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

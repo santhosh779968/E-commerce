@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.com/LoginStatusBoolean" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/LoginStatusBoolean">
+
+    <element name="LoginCheck" type="tns:LoginCheckType"></element>
+    
+    <complexType name="LoginCheckType">
+    	<sequence>
+    		<element name="UserID" type="boolean"></element>
+    		<element name="Password" type="boolean"></element>
+    	</sequence>
+    </complexType>
+</schema>

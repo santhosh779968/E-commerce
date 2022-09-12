@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/Customers" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.com/Customers">
+        
+  
+  <element name="Customers" type="tns:CustomersType"/>
+        
+  
+  <complexType name="CustomersType">
+            	
+    
+    <sequence>
+                		
+      
+      <element maxOccurs="unbounded" minOccurs="0" name="Customer" type="tns:CustomerType"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+  
+  <complexType name="CustomerType">
+            	
+    
+    <sequence>
+
+    	<element name="CUSTOMER_ID" type="string" />
+
+    	<element name="FIRST_NAME" type="string" maxOccurs="1"
+    		minOccurs="0" />
+
+    	<element name="LAST_NAME" type="string" maxOccurs="1"
+    		minOccurs="0" />
+
+    	<element name="PHONE" type="string" maxOccurs="1" minOccurs="0" />
+
+    	<element name="EMAIL" type="string" maxOccurs="1" minOccurs="0" />
+
+    	<element name="STREET" type="string" maxOccurs="1"
+    		minOccurs="0" />
+
+    	<element name="CITY" type="string" maxOccurs="1" minOccurs="0" />
+
+    	<element name="STATE" type="string" maxOccurs="1" minOccurs="0" />
+
+    	<element name="ZIP_CODE" type="string" maxOccurs="1"
+    		minOccurs="0" />
+
+    	<element name="PASSWORD" type="string" maxOccurs="1" minOccurs="0"></element>
+    	<element name="RE-ENTERPASSWORD" type="string" maxOccurs="1" minOccurs="0"></element>
+    </sequence>
+
+  </complexType>
+        
+  
+  <element name="Customer" type="tns:CustomerType"/>
+        
+  
+  <element name="CustomerID" type="tns:CustomerIDType"/>
+        
+    
+  
+  <complexType name="CustomerIDType">
+            	
+    
+    <sequence>
+                		
+      
+      <element name="CustomerID" type="string"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+  
+  <element name="operationRequest">
+        
+    <complexType>
+            
+      <sequence>
+                
+        <element name="in" type="string"/>
+              
+      </sequence>
+          
+    </complexType>
+      
+  </element>
+        
+  
+  <element name="operationResponse">
+        
+    <complexType>
+            
+      <sequence>
+                
+        <element name="out" type="string"/>
+              
+      </sequence>
+          
+    </complexType>
+      
+  </element>
+    
+    
+  <element name="operationRequest1">
+    <complexType>
+      <sequence>
+        <element name="in" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+</schema>

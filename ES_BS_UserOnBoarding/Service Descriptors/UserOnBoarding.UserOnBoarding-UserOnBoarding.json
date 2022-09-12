@@ -1,0 +1,150 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "UserOnBoarding",
+    "description" : "UserOnBoarding service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/DeactivateAccount" : {
+      "post" : {
+        "summary" : "postUserOnBoarding",
+        "description" : "postUserOnBoarding",
+        "operationId" : "post-DeactivateAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/CustomerID"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Status to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Status"
+            }
+          }
+        }
+      }
+    },
+    "/CreateAccount" : {
+      "post" : {
+        "summary" : "postUserOnBoarding",
+        "description" : "postUserOnBoarding",
+        "operationId" : "post-CreateAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Customer"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Status to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Status"
+            }
+          }
+        }
+      }
+    },
+    "/GetAccountDetails" : {
+      "post" : {
+        "summary" : "postUserOnBoarding",
+        "description" : "postUserOnBoarding",
+        "operationId" : "post-GetAccountDetails",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/CustomerID"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Customer to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Status" : {
+      "type" : "object",
+      "required" : [ "Status" ],
+      "properties" : {
+        "Status" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Customer" : {
+      "type" : "object",
+      "required" : [ "CUSTOMER_ID" ],
+      "properties" : {
+        "CUSTOMER_ID" : {
+          "type" : "string"
+        },
+        "FIRST_NAME" : {
+          "type" : "string"
+        },
+        "LAST_NAME" : {
+          "type" : "string"
+        },
+        "PHONE" : {
+          "type" : "string"
+        },
+        "EMAIL" : {
+          "type" : "string"
+        },
+        "STREET" : {
+          "type" : "string"
+        },
+        "CITY" : {
+          "type" : "string"
+        },
+        "STATE" : {
+          "type" : "string"
+        },
+        "ZIP_CODE" : {
+          "type" : "string"
+        },
+        "PASSWORD" : {
+          "type" : "string"
+        },
+        "RE-ENTERPASSWORD" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CustomerID" : {
+      "type" : "object",
+      "required" : [ "CustomerID" ],
+      "properties" : {
+        "CustomerID" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

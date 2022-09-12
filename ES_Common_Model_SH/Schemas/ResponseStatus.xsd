@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/ResponseStatus" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.com/ResponseStatus">
+          
+  
+  
+  <element name="Status" type="tns:StatusType"/>
+          
+    
+  
+  
+  <complexType name="StatusType">
+                	
+    
+    
+    <sequence>
+                      		
+      
+      
+      <element name="Status" type="string"/>
+                      	
+    
+    
+    </sequence>
+                
+  
+  
+  </complexType>
+          
+  
+  
+  <complexType name="StatusArray">
+            
+    
+    <sequence>
+                  
+      
+      <element maxOccurs="unbounded" minOccurs="0" name="Status" type="tns:StatusType"/>
+                
+    
+    </sequence>
+          
+  
+  </complexType>
+          
+  
+  
+  <element name="StatusArray" type="tns:StatusArray"/>
+      
+    
+  
+  <complexType name="integerArray">
+        
+    <sequence>
+            
+      <element maxOccurs="unbounded" minOccurs="0" name="integer" type="integer"/>
+          
+    </sequence>
+      
+  </complexType>
+        
+  
+  <element name="integerArray" type="tns:integerArray"/>
+    
+    
+  <complexType name="stringArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="string" type="string"/>
+    </sequence>
+  </complexType>
+      
+  <element name="stringArray" type="tns:stringArray"/>
+  
+</schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.com/ValidateSession" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/ValidateSession">
+
+    <element name="ValidateSession" type="tns:ValidateSessionType"></element>
+    
+    <complexType name="ValidateSessionType">
+    	<sequence>
+    		<element name="UserID" type="string"></element>
+    		<element name="SessionID" type="string"></element>
+    		<element name="Is_Valid" type="boolean"></element>
+    		<element name="Active_Status" type="boolean"></element>
+    	</sequence>
+    </complexType>
+</schema>

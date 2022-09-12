@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tibex="http://www.tibco.com/bs3.2/extensions" xmlns:tns="http://www.eniquesolutions.com/Abstract/ProductManagement/" xmlns:tns0="http://www.eniquesolutions.com/FileInput" xmlns:tns1="http://www.eniquesolutions.com/ResponseStatus" xmlns:tns2="http://www.eniquesolutions.org/Products" xmlns:tns3="http://www.eniquesolutions.org/Categories" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProductManagement" targetNamespace="http://www.eniquesolutions.com/Abstract/ProductManagement/" tibex:src="file:/C:/Bw6_Workspace/MiniProject/WSDLfiles/ProductManagement_ConcreteConcrete.wsdl">
+    
+  <wsdl:types>
+        
+    <xsd:schema xmlns:tns="http://www.eniquesolutions.com/FileInput" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.com/FileInput">
+            
+      <xsd:element name="FileInput" type="tns:FileInputtype"/>
+            
+      <xsd:complexType name="FileInputtype">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="FilePath" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+          
+    </xsd:schema>
+        
+    <xsd:schema xmlns:tns="http://www.eniquesolutions.com/ResponseStatus" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.com/ResponseStatus">
+            
+      <xsd:element name="Status" type="tns:StatusType"/>
+            
+      <xsd:complexType name="StatusType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="Status" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:complexType name="StatusArray">
+                
+        <xsd:sequence>
+                    
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Status" type="tns:StatusType"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:element name="StatusArray" type="tns:StatusArray"/>
+          
+    </xsd:schema>
+        
+    <xsd:schema xmlns:tns="http://www.eniquesolutions.org/Products" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.org/Products">
+            
+      <xsd:element name="Products" type="tns:ProductsType"/>
+            
+      <xsd:element name="Product" type="tns:ProductType"/>
+            
+      <xsd:complexType name="ProductsType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Product" type="tns:ProductType"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:complexType name="ProductType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="PRODUCT_ID" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="PRODUCT_NAME" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="BRAND_ID" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="CATEGORY_ID" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="MODEL_YEAR" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="LIST_PRICE" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:element name="ProductID" type="tns:ProductIDType"/>
+            
+      <xsd:complexType name="ProductIDType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element maxOccurs="1" minOccurs="1" name="ProductID" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+          
+    </xsd:schema>
+        
+    <xsd:schema xmlns:tns="http://www.eniquesolutions.org/Categories" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.org/Categories">
+            
+      <xsd:element name="Categories" type="tns:CategoriesType"/>
+            
+      <xsd:element name="Category" type="tns:CategoryType"/>
+            
+      <xsd:complexType name="CategoryType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="CATEGORY_ID" type="xsd:string"/>
+                    
+          <xsd:element maxOccurs="1" minOccurs="0" name="CATEGORY_NAME" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:complexType name="CategoriesType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="Category" type="tns:CategoryType"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+            
+      <xsd:element name="CategoryID" type="tns:CategoryIDType"/>
+            
+      <xsd:complexType name="CategoryIDType">
+                
+        <xsd:sequence>
+                    
+          <xsd:element name="CategoryID" type="xsd:string"/>
+                  
+        </xsd:sequence>
+              
+      </xsd:complexType>
+          
+    </xsd:schema>
+      
+  </wsdl:types>
+    
+  <wsdl:message name="AddProductRequest">
+        
+    <wsdl:part element="tns0:FileInput" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="AddProductResponse">
+        
+    <wsdl:part element="tns1:Status" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="DeleteProductRequest">
+        
+    <wsdl:part element="tns0:FileInput" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="DeleteProductResponse">
+        
+    <wsdl:part element="tns1:Status" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="UpdateProductRequest">
+        
+    <wsdl:part element="tns0:FileInput" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="UpdateProductResponse">
+        
+    <wsdl:part element="tns1:Status" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="GetAllProductsRequest">
+        
+    <wsdl:part element="tns1:Status" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="GetAllProductsResponse">
+        
+    <wsdl:part element="tns2:Products" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="GetIndividualProductsRequest">
+        
+    <wsdl:part element="tns2:ProductID" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="GetIndividualProductsResponse">
+        
+    <wsdl:part element="tns2:Product" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="GetProductsByCategoryRequest">
+        
+    <wsdl:part element="tns3:Category" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:message name="GetProductsByCategoryResponse">
+        
+    <wsdl:part element="tns2:Products" name="parameters"/>
+      
+  </wsdl:message>
+    
+  <wsdl:portType name="ProductManagement">
+        
+    <wsdl:operation name="AddProduct">
+            
+      <wsdl:input message="tns:AddProductRequest"/>
+            
+      <wsdl:output message="tns:AddProductResponse"/>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="DeleteProduct">
+            
+      <wsdl:input message="tns:DeleteProductRequest"/>
+            
+      <wsdl:output message="tns:DeleteProductResponse"/>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="UpdateProduct">
+            
+      <wsdl:input message="tns:UpdateProductRequest"/>
+            
+      <wsdl:output message="tns:UpdateProductResponse"/>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="GetAllProducts">
+            
+      <wsdl:input message="tns:GetAllProductsRequest"/>
+            
+      <wsdl:output message="tns:GetAllProductsResponse"/>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="GetIndividualProducts">
+            
+      <wsdl:input message="tns:GetIndividualProductsRequest"/>
+            
+      <wsdl:output message="tns:GetIndividualProductsResponse"/>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="GetProductsByCategory">
+            
+      <wsdl:input message="tns:GetProductsByCategoryRequest"/>
+            
+      <wsdl:output message="tns:GetProductsByCategoryResponse"/>
+          
+    </wsdl:operation>
+      
+  </wsdl:portType>
+    
+  <wsdl:binding name="SOAPServiceBinding" type="tns:ProductManagement">
+        
+    <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+        
+    <jms:binding messageFormat="bytes"/>
+        
+    <wsdl:operation name="AddProduct">
+            
+      <soap:operation soapAction="AddProduct" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="DeleteProduct">
+            
+      <soap:operation soapAction="DeleteProduct" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="UpdateProduct">
+            
+      <soap:operation soapAction="UpdateProduct" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="GetAllProducts">
+            
+      <soap:operation soapAction="GetAllProducts" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="GetIndividualProducts">
+            
+      <soap:operation soapAction="GetIndividualProducts" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+        
+    <wsdl:operation name="GetProductsByCategory">
+            
+      <soap:operation soapAction="GetProductsByCategory" style="document"/>
+            
+      <wsdl:input>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:input>
+            
+      <wsdl:output>
+                
+        <soap:body parts="parameters" use="literal"/>
+              
+      </wsdl:output>
+          
+    </wsdl:operation>
+      
+  </wsdl:binding>
+    
+  <wsdl:service name="ProductManagement">
+        
+    <wsdl:port binding="tns:SOAPServiceBinding" name="ProductManagementSOAP">
+            
+      <soap:address location=""/>
+            
+      <jms:connectionFactory/>
+            
+      <jms:targetAddress destination="queue">queue.sample</jms:targetAddress>
+          
+    </wsdl:port>
+      
+  </wsdl:service>
+  
+</wsdl:definitions>

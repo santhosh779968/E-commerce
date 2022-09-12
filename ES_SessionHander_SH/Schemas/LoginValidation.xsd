@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.org/LoginValidation" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.org/LoginValidation">
+        
+  
+  <element name="LoginReq" type="tns:LoginValidationType"/>
+        
+    
+  
+  <complexType name="LoginValidationType">
+            	
+    
+    <sequence>
+                		
+      
+      <element name="UserID" type="string"/>
+                		
+      
+      <element name="Password" type="string"/>
+                		
+          	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+  
+  <element name="LogoutReq" type="string"/>
+        
+    
+  
+  <complexType name="LoginResType"/>
+        
+  
+  <complexType name="stringArray">
+        
+    <sequence>
+            
+      <element maxOccurs="unbounded" minOccurs="0" name="string" type="string"/>
+          
+    </sequence>
+      
+  </complexType>
+        
+  
+  <element name="stringArray" type="tns:stringArray"/>
+    
+    
+  <complexType name="LoginReqArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="LoginReq" type="tns:LoginValidationType"/>
+    </sequence>
+  </complexType>
+      
+  <element name="LoginReqArray" type="tns:LoginReqArray"/>
+  
+</schema>

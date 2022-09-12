@@ -1,0 +1,37 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/es_sessionhander.Resource-Resource.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/es_sessionhander.Login-Login.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/es_sessionhander.Logout-Logout.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/es_sessionhander.ValidateSession-ValidateSession.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/es_sessionhander.SessionValidation-SessionValidation.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/es_sessionhander.Loginservice-Loginservice.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/es_sessionhander.LoginResource-LoginResource.json",
+            "type": "generated"
+        }
+    ]
+}

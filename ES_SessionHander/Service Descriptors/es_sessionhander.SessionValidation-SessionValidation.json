@@ -1,0 +1,59 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "SessionValidation",
+    "description" : "SessionValidation service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/sessionvalidation" : {
+      "post" : {
+        "summary" : "postSessionValidation",
+        "description" : "postSessionValidation",
+        "operationId" : "post-sessionvalidation",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ValidateSession"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a ValidateSession to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/ValidateSession"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ValidateSession" : {
+      "type" : "object",
+      "required" : [ "UserID", "Active_Status", "SessionID", "Is_Valid" ],
+      "properties" : {
+        "UserID" : {
+          "type" : "string"
+        },
+        "SessionID" : {
+          "type" : "string"
+        },
+        "Is_Valid" : {
+          "type" : "boolean"
+        },
+        "Active_Status" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}

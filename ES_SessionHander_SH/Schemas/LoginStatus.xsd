@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/LoginStatus" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.com/LoginStatus">
+      
+  <element name="LoginStatus" type="tns:LoginStatusType"/>
+      
+    
+  <complexType name="LoginStatusType">
+        	
+    <sequence>
+          		
+      <element name="CustomerID" type="string"/>
+          		
+      <element maxOccurs="1" minOccurs="0" name="SessionID" type="string"/>
+          		
+      <element name="Is_Success" type="boolean"/>
+          	
+    </sequence>
+        
+  </complexType>
+      
+  <complexType name="LoginStatusArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="LoginStatus" type="tns:LoginStatusType"/>
+    </sequence>
+  </complexType>
+      
+  <element name="LoginStatusArray" type="tns:LoginStatusArray"/>
+  
+</schema>

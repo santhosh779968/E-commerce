@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.com/Product_Management" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/Product_Management">
+
+    
+    
+
+    <complexType name="AddproductsType">
+    	<sequence>
+    		<element name="Addproduct" type="tns:AddproductType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="AddproductType">
+    	<sequence>
+    		<element name="PRODUCT_ID" type="string"></element>
+    		<element name="PRODUCT_NAME" type="string"></element>
+    		<element name="BRAND_ID" type="string"></element>
+    		<element name="CATEGORY_ID" type="string"></element>
+    		<element name="MODEL_YEAR" type="string"></element>
+    		<element name="LIST_PRICE" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Addproduct" type="tns:AddproductType"></element>
+
+    <element name="Addproducts" type="tns:AddproductsType"></element>
+</schema>

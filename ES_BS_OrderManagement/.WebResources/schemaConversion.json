@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/ES_BS_OrderManagement/Service Descriptors/es_bs_ordermanagement.OrderManagement-OrderManagement.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Orders"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_OrderManagement/Service Descriptors/es_bs_ordermanagement.OrderManagement-OrderManagement.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.com/ResponseStatus"
+    }
+]}

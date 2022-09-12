@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.org/Categories" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.org/Categories">
+
+    <element name="Categories" type="tns:CategoriesType"></element>
+    
+    <element name="Category" type="tns:CategoryType"></element>
+    
+    <complexType name="CategoryType">
+    	<sequence>
+    		<element name="CATEGORY_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CATEGORY_NAME" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="CategoriesType">
+    	<sequence>
+    		<element name="Category" type="tns:CategoryType"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="CategoryID" type="tns:CategoryIDType"></element>
+    
+    <complexType name="CategoryIDType">
+    	<sequence>
+    		<element name="CategoryID" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

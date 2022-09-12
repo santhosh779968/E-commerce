@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_PAAaoNzUEey6CMD1hjQgmg" targetNamespace="http://tns.tibco.com/bw/composite/ES_BS_OrderManagement" name="ES_BS_OrderManagement" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_TXdocNznEey6CMD1hjQgmg" name="CreateOrder" promote="ComponentOrderManagement/CreateOrder">
+    <sca:interface.wsdl xmi:id="_TX9XsNznEey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(ordermanagement)" scaext:wsdlLocation="../Processes/es_bs_ordermanagement/OrderManagement.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_TYh_cNznEey6CMD1hjQgmg" name="RestService" path="/ordermanagement" docBasePath="http://localhost:7777/ES_BS_OrderManagement" docResourcePath="OrderManagement" basePath="/" connector="es_common_model.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/es_bs_ordermanagement.OrderManagement-OrderManagement.json">
+      <operation xmi:id="_TZDj4NznEey6CMD1hjQgmg" operationName="post" nickname="post-ordermanagement" httpMethod="POST" notes="postOrderManagement" responseStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_TZYUANznEey6CMD1hjQgmg"/>
+      <advancedConfig xmi:id="_TYh_cdznEey6CMD1hjQgmg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_TZDj4dznEey6CMD1hjQgmg" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_weEEkN1-Eey6CMD1hjQgmg" name="UpdateOrder" promote="ComponentOrderManagement/UpdateOrder">
+    <sca:interface.wsdl xmi:id="_weEElN1-Eey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(UpdateOrder)" scaext:wsdlLocation="../Processes/es_bs_ordermanagement/OrderManagement.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_weneMN1-Eey6CMD1hjQgmg" name="RestService1" path="/UpdateOrder" docBasePath="http://localhost:7777/ES_BS_OrderManagement" docResourcePath="OrderManagement" basePath="/" connector="es_common_model.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/es_bs_ordermanagement.OrderManagement-OrderManagement.json">
+      <operation xmi:id="_wfBG0N1-Eey6CMD1hjQgmg" operationName="post" nickname="post-UpdateOrder" httpMethod="POST" notes="postOrderManagement" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_wfscQN1-Eey6CMD1hjQgmg"/>
+      <advancedConfig xmi:id="_weneMd1-Eey6CMD1hjQgmg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_wfBt4N1-Eey6CMD1hjQgmg" bindingName="RestService1"/>
+  </sca:service>
+  <sca:service xmi:id="_CEzRwN1_Eey6CMD1hjQgmg" name="DeleteOrder" promote="ComponentOrderManagement/DeleteOrder">
+    <sca:interface.wsdl xmi:id="_CEzRxN1_Eey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(DeleteOrder)" scaext:wsdlLocation="../Processes/es_bs_ordermanagement/OrderManagement.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_CFkGwN1_Eey6CMD1hjQgmg" name="RestService2" path="/DeleteOrder" docBasePath="http://localhost:7777/ES_BS_OrderManagement" docResourcePath="OrderManagement" basePath="/" connector="es_common_model.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/es_bs_ordermanagement.OrderManagement-OrderManagement.json">
+      <operation xmi:id="_CF0lcN1_Eey6CMD1hjQgmg" operationName="post" nickname="post-DeleteOrder" httpMethod="POST" notes="postOrderManagement" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_CGhwEN1_Eey6CMD1hjQgmg"/>
+      <advancedConfig xmi:id="_CFkGwd1_Eey6CMD1hjQgmg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_CF0lcd1_Eey6CMD1hjQgmg" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_LpeQgt2AEey6CMD1hjQgmg" name="GetOrder" promote="ComponentOrderManagement/GetOrder">
+    <sca:interface.wsdl xmi:id="_LpeQht2AEey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(GetOrder)" scaext:wsdlLocation="../Processes/es_bs_ordermanagement/OrderManagement.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_LqdvAN2AEey6CMD1hjQgmg" name="RestService3" path="/GetOrder" docBasePath="http://localhost:7777/ES_BS_OrderManagement" docResourcePath="OrderManagement" basePath="/" connector="es_common_model.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/es_bs_ordermanagement.OrderManagement-OrderManagement.json">
+      <operation xmi:id="_Lqu0wN2AEey6CMD1hjQgmg" operationName="post" nickname="post-GetOrder" httpMethod="POST" notes="postOrderManagement" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_LrK5oN2AEey6CMD1hjQgmg"/>
+      <advancedConfig xmi:id="_LqdvAd2AEey6CMD1hjQgmg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Lqu0wd2AEey6CMD1hjQgmg" bindingName="RestService3"/>
+  </sca:service>
+  <sca:service xmi:id="_ltpkEN2AEey6CMD1hjQgmg" name="OrderHistory" promote="ComponentOrderManagement/OrderHistory">
+    <sca:interface.wsdl xmi:id="_ltpkFN2AEey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(OrderHistory)" scaext:wsdlLocation="../Processes/es_bs_ordermanagement/OrderManagement.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_lvDSQN2AEey6CMD1hjQgmg" name="RestService4" path="/OrderHistory" docBasePath="http://localhost:7777/ES_BS_OrderManagement" docResourcePath="OrderManagement" basePath="/" connector="es_common_model.HTTPConnectorResource" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/es_bs_ordermanagement.OrderManagement-OrderManagement.json">
+      <operation xmi:id="_lvUYAN2AEey6CMD1hjQgmg" operationName="post" nickname="post-OrderHistory" httpMethod="POST" notes="postOrderManagement" responseStyle="element" requestStyle="element" outputPartName="item">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_lvU_EN2AEey6CMD1hjQgmg"/>
+      <advancedConfig xmi:id="_lvDSQd2AEey6CMD1hjQgmg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_lvUYAd2AEey6CMD1hjQgmg" bindingName="RestService4"/>
+  </sca:service>
+  <sca:property xmi:id="_P06pYNzUEey6CMD1hjQgmg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_P1DzUNzUEey6CMD1hjQgmg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_P1IEwNzUEey6CMD1hjQgmg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_P1MWMNzUEey6CMD1hjQgmg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_P1QnoNzUEey6CMD1hjQgmg" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_P1USANzUEey6CMD1hjQgmg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_P1YjcNzUEey6CMD1hjQgmg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_P1cN0NzUEey6CMD1hjQgmg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_P1gfQNzUEey6CMD1hjQgmg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_TW614NznEey6CMD1hjQgmg" name="ComponentOrderManagement" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_TW614dznEey6CMD1hjQgmg" processName="es_bs_ordermanagement.OrderManagement"/>
+    <sca:service xmi:id="_TXL7oNznEey6CMD1hjQgmg" name="CreateOrder">
+      <sca:interface.wsdl xmi:id="_TXW6wNznEey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(ordermanagement)" scaext:wsdlLocation="../Processes/es_bs_ordermanagement/OrderManagement.bwp"/>
+    </sca:service>
+    <sca:service xmi:id="_weDdgN1-Eey6CMD1hjQgmg" name="UpdateOrder">
+      <sca:interface.wsdl xmi:id="_weDdgd1-Eey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(UpdateOrder)"/>
+    </sca:service>
+    <sca:service xmi:id="_CEyqsN1_Eey6CMD1hjQgmg" name="DeleteOrder">
+      <sca:interface.wsdl xmi:id="_CEyqsd1_Eey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(DeleteOrder)"/>
+    </sca:service>
+    <sca:service xmi:id="_LpeQgN2AEey6CMD1hjQgmg" name="GetOrder">
+      <sca:interface.wsdl xmi:id="_LpeQgd2AEey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(GetOrder)"/>
+    </sca:service>
+    <sca:service xmi:id="_lto9AN2AEey6CMD1hjQgmg" name="OrderHistory">
+      <sca:interface.wsdl xmi:id="_lto9Ad2AEey6CMD1hjQgmg" interface="http://xmlns.example.com/20220526170053PLT#wsdl.interface(OrderHistory)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

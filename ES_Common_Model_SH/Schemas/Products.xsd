@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.org/Products" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.org/Products">
+
+    <element name="Products" type="tns:ProductsType"></element>
+    
+    <element name="Product" type="tns:ProductType"></element>
+    
+    <complexType name="ProductsType">
+    	<sequence>
+    		<element name="Product" type="tns:ProductType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="ProductType">
+    	<sequence>
+    		<element name="PRODUCT_ID" type="string"></element>
+    		<element name="PRODUCT_NAME" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="BRAND_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CATEGORY_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="MODEL_YEAR" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="LIST_PRICE" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ProductID" type="tns:ProductIDType"></element>
+    
+    <complexType name="ProductIDType">
+    	<sequence>
+    		<element name="ProductID" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+</schema>

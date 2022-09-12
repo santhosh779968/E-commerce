@@ -1,0 +1,58 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "TrackShipment",
+    "description" : "Shipment service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/UpdateShipment" : {
+      "get" : {
+        "summary" : "getTrackShipment",
+        "description" : "getTrackShipment",
+        "operationId" : "get-UpdateShipment",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Status",
+          "in" : "query",
+          "description" : "",
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "uniqueItems" : false
+          },
+          "required" : true
+        }, {
+          "name" : "OrderID",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Status to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Status"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Status" : {
+      "type" : "object",
+      "required" : [ "Status" ],
+      "properties" : {
+        "Status" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

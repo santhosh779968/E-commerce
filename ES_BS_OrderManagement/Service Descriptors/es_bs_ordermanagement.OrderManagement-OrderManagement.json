@@ -1,0 +1,211 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "OrderManagement",
+    "description" : "OrderManagement service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/UpdateOrder" : {
+      "post" : {
+        "summary" : "postOrderManagement",
+        "description" : "postOrderManagement",
+        "operationId" : "post-UpdateOrder",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Order"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Status to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Status"
+            }
+          }
+        }
+      }
+    },
+    "/DeleteOrder" : {
+      "post" : {
+        "summary" : "postOrderManagement",
+        "description" : "postOrderManagement",
+        "operationId" : "post-DeleteOrder",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/OrderID"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Status to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Status"
+            }
+          }
+        }
+      }
+    },
+    "/ordermanagement" : {
+      "post" : {
+        "summary" : "postOrderManagement",
+        "description" : "postOrderManagement",
+        "operationId" : "post-ordermanagement",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Orders"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Status to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Status"
+            }
+          }
+        }
+      }
+    },
+    "/OrderHistory" : {
+      "post" : {
+        "summary" : "postOrderManagement",
+        "description" : "postOrderManagement",
+        "operationId" : "post-OrderHistory",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Status"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Orders to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Orders"
+            }
+          }
+        }
+      }
+    },
+    "/GetOrder" : {
+      "post" : {
+        "summary" : "postOrderManagement",
+        "description" : "postOrderManagement",
+        "operationId" : "post-GetOrder",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/OrderID"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Order to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Order"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Status" : {
+      "type" : "object",
+      "required" : [ "Status" ],
+      "properties" : {
+        "Status" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Order" : {
+      "type" : "object",
+      "required" : [ "ORDER_ID", "CUSTOMER_ID" ],
+      "properties" : {
+        "ORDER_ID" : {
+          "type" : "string"
+        },
+        "CUSTOMER_ID" : {
+          "type" : "string"
+        },
+        "PRODUCT_ID" : {
+          "type" : "string"
+        },
+        "QUANTITY" : {
+          "type" : "string"
+        },
+        "LIST_PRICE" : {
+          "type" : "string"
+        },
+        "DISCOUNT" : {
+          "type" : "string"
+        },
+        "ORDER_STATUS" : {
+          "type" : "string"
+        },
+        "ORDER_DATE" : {
+          "type" : "string"
+        },
+        "REQUIRED_DATE" : {
+          "type" : "string"
+        },
+        "SHIPPED_DATE" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Orders" : {
+      "type" : "object",
+      "properties" : {
+        "Order" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Order",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "OrderID" : {
+      "type" : "object",
+      "required" : [ "OrderID" ],
+      "properties" : {
+        "OrderID" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

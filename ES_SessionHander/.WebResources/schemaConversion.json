@@ -1,0 +1,47 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.Resource-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/LoginValidation"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.Resource-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/LoginValidation"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.Resource-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/LoginValidation"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.Login-Login.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/LoginValidation"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.Login-Login.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/LoginValidation"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.LoginResource-LoginResource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/LoginValidation"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.Login-Login.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.com/LoginStatus"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.Login-Login.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.com/LoginResponse"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHander/Service Descriptors/es_sessionhander.Logout-Logout.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.com/ResponseStatus"
+    }
+]}

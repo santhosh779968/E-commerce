@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tibco.com/TrackShipment/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TrackShipment" targetNamespace="http://www.tibco.com/TrackShipment/" xmlns:xsd1="http://www.eniquesolutions.com/TrackShipment" xmlns:xsd2="http://www.eniquesolutions.org/Orders" xmlns:xsd3="http://www.eniquesolutions.com/ResponseStatus">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.tibco.com/TrackShipment/">
+      <xsd:element name="TrackShipment">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TrackShipmentResponse1">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.eniquesolutions.com/TrackShipment"
+    		schemaLocation="../Schemas/TrackShipment.xsd">
+    	</xsd:import>
+    	<xsd:import namespace="http://www.eniquesolutions.org/Orders"
+    		schemaLocation="../Schemas/Orders.xsd">
+    	</xsd:import>
+    	<xsd:import
+    		namespace="http://www.eniquesolutions.com/ResponseStatus"
+    		schemaLocation="../Schemas/ResponseStatus.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="UpdateShipmentRequest">
+    <wsdl:part element="xsd2:OrderShimentReq" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateShipmentResponse">
+    <wsdl:part element="xsd3:Status" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="TrackShipmentRequest">
+  	<wsdl:part name="parameters" element="xsd2:OrderID"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="TrackShipmentResponse">
+  	<wsdl:part name="parameters" element="xsd3:Status"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TrackShipment">
+    <wsdl:operation name="UpdateShipment">
+      <wsdl:input message="tns:UpdateShipmentRequest"/>
+      <wsdl:output message="tns:UpdateShipmentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="TrackShipment">
+    	<wsdl:input message="tns:TrackShipmentRequest"></wsdl:input>
+    	<wsdl:output message="tns:TrackShipmentResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TrackShipmentSOAP" type="tns:TrackShipment">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="UpdateShipment">
+      <soap:operation soapAction="http://www.tibco.com/TrackShipment/UpdateShipment"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrackShipment">
+    <wsdl:port binding="tns:TrackShipmentSOAP" name="TrackShipmentSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

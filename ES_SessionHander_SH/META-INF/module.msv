@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="SessionsMSV" type="{http://www.eniquesolutions.org/SessionDetails}Sessions" initialValueMode="none"/>
+    <moduleSharedVariable name="moduleSharedVariable" type="{http://www.w3.org/2001/XMLSchema}string" initialValueMode="none"/>
+  </moduleSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.eniquesolutions.org/SessionDetails" location="../Schemas/SessionDetails.xsd"/>
+</msv:DocumentRoot>

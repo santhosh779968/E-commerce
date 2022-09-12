@@ -1,0 +1,17 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/ES_BS_TrackShipment/Service Descriptors/trackshipment.TrackShipment-TrackShipment.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.com/TrackShipment"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_TrackShipment/Service Descriptors/trackshipment.TrackShipment-TrackShipment.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.com/ResponseStatus"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_TrackShipment/Service Descriptors/trackshipment.ShipmentTracking-UpdateShipment.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.com/TrackShipment"
+    }
+]}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/LoginResponse" elementFormDefault="qualified" targetNamespace="http://www.eniquesolutions.com/LoginResponse">
+      
+  <element name="LoginRes" type="tns:LoginResponseType"/>
+      
+    
+  <complexType name="LoginResponseType">
+        	
+    <sequence>
+          		
+      <element name="CustomerID" type="string"/>
+          		
+      <element name="ResponseStatus" type="string"/>
+          	
+    </sequence>
+        
+  </complexType>
+      
+  <complexType name="LoginResArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="LoginRes" type="tns:LoginResponseType"/>
+    </sequence>
+  </complexType>
+      
+  <element name="LoginResArray" type="tns:LoginResArray"/>
+  
+</schema>

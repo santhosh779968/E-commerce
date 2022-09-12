@@ -1,0 +1,53 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Resource",
+    "description" : "Resource service"
+  },
+  "host" : "",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/Login" : {
+      "post" : {
+        "summary" : "postResource",
+        "description" : "postResource",
+        "operationId" : "post-Login",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/LoginValidaiton"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a LoginValidaiton to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/LoginValidaiton"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "LoginValidaiton" : {
+      "type" : "object",
+      "required" : [ "UserID", "Password" ],
+      "properties" : {
+        "UserID" : {
+          "type" : "string"
+        },
+        "Password" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

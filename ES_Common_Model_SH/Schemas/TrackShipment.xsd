@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.com/TrackShipment" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/TrackShipment">
+
+    <element name="TrackShipmentReq" type="tns:TrackRequesType"></element>
+    
+    <complexType name="TrackRequesType">
+    	<sequence>
+    		<element name="OrderID" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="TrackShipmentRes" type="tns:TrackRespseType"></element>
+    
+    <complexType name="TrackRespseType">
+    	<sequence>
+    		<element name="ResponseType" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:Orders="http://www.eniquesolutions.org/Orders" xmlns:ResponseStatus="http://www.eniquesolutions.com/ResponseStatus" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:pt="http://www.tibco.com/TrackShipment/" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_dXMxAPxBEeyCUZ-mQ0gQOQ" targetNamespace="http://tns.tibco.com/bw/composite/ES_TS_TrackShipment" name="ES_TS_TrackShipment" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_tcFFsPxIEeyCUZ-mQ0gQOQ" name="TrackShipment" promote="ComponentTrackShipment/TrackShipment">
+    <sca:interface.wsdl xmi:id="_tcGT0PxIEeyCUZ-mQ0gQOQ" interface="http://www.tibco.com/TrackShipment/#wsdl.interface(TrackShipment)" scaext:wsdlLocation="../../ES_Common_Model_SH/Service%20Descriptors/TrackShipment.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_9w0PwPxZEeyCUZ-mQ0gQOQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/4871bf9c5cbf4a14a94e78eebde49a25/SOAPServiceBinding" portTypeQName="pt:TrackShipment" transportBindingType="JMS" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/ES_Common_Model_SH/Service%20Descriptors/TrackShipment.wsdl">
+      <bindingType xmi:id="_9w1d4PxZEeyCUZ-mQ0gQOQ"/>
+      <inboundConfiguration xsi:type="axis2:JMSInboundTransportConfiguration" xmi:id="_DDOkkPxaEeyCUZ-mQ0gQOQ" jmsResource="es_common_model.JMSConnectionResourceTS" destination="SampleQueue"/>
+      <operationConfiguration xmi:id="_9w2E8PxZEeyCUZ-mQ0gQOQ" operationName="UpdateShipment" action="UpdateShipment" actionNeeded="true">
+        <bindingType xmi:id="_9w2E8fxZEeyCUZ-mQ0gQOQ"/>
+        <messageConfiguration xmi:id="_9w2E8vxZEeyCUZ-mQ0gQOQ" messageQName="pt:UpdateShipmentRequest" wsdlLocation="platform:/resource/ES_Common_Model_SH/Service%20Descriptors/TrackShipment.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_9w2E8_xZEeyCUZ-mQ0gQOQ" partName="parameters" partElementName="Orders:OrderShimentReq"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_9w2E9PxZEeyCUZ-mQ0gQOQ" messageQName="pt:UpdateShipmentResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_Common_Model_SH/Service%20Descriptors/TrackShipment.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_9w2E9fxZEeyCUZ-mQ0gQOQ" partName="parameters" partElementName="ResponseStatus:Status"/>
+        </messageConfiguration>
+        <context xmi:id="_9w2E_PxZEeyCUZ-mQ0gQOQ">
+          <inputMapping xmi:id="_9w2E_fxZEeyCUZ-mQ0gQOQ"/>
+          <outputMapping xmi:id="_9w2E_vxZEeyCUZ-mQ0gQOQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_9w2E9vxZEeyCUZ-mQ0gQOQ" operationName="TrackShipment" action="TrackShipment" actionNeeded="true">
+        <bindingType xmi:id="_9w2E9_xZEeyCUZ-mQ0gQOQ"/>
+        <messageConfiguration xmi:id="_9w2E-PxZEeyCUZ-mQ0gQOQ" messageQName="pt:TrackShipmentRequest" wsdlLocation="platform:/resource/ES_Common_Model_SH/Service%20Descriptors/TrackShipment.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_9w2E-fxZEeyCUZ-mQ0gQOQ" partName="parameters" partElementName="Orders:OrderID"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_9w2E-vxZEeyCUZ-mQ0gQOQ" messageQName="pt:TrackShipmentResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_Common_Model_SH/Service%20Descriptors/TrackShipment.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_9w2E-_xZEeyCUZ-mQ0gQOQ" partName="parameters" partElementName="ResponseStatus:Status"/>
+        </messageConfiguration>
+        <context xmi:id="_9w2E__xZEeyCUZ-mQ0gQOQ">
+          <inputMapping xmi:id="_9w2sAPxZEeyCUZ-mQ0gQOQ"/>
+          <outputMapping xmi:id="_9w2sAfxZEeyCUZ-mQ0gQOQ" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_9w2sAvxZEeyCUZ-mQ0gQOQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_er6hMPxBEeyCUZ-mQ0gQOQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_esODMPxBEeyCUZ-mQ0gQOQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_esbekPxBEeyCUZ-mQ0gQOQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_esmdsPxBEeyCUZ-mQ0gQOQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_esw1wPxBEeyCUZ-mQ0gQOQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_es_fQPxBEeyCUZ-mQ0gQOQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_etLsgPxBEeyCUZ-mQ0gQOQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_etdZUPxBEeyCUZ-mQ0gQOQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ettQ8PxBEeyCUZ-mQ0gQOQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_Dr2XsPxCEeyCUZ-mQ0gQOQ" name="ComponentTrackShipment" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Dr2XsfxCEeyCUZ-mQ0gQOQ" processName="es_ts_trackshipment.TrackShipment"/>
+    <sca:service xmi:id="_tcD3kPxIEeyCUZ-mQ0gQOQ" name="TrackShipment">
+      <sca:interface.wsdl xmi:id="_tcEeoPxIEeyCUZ-mQ0gQOQ" interface="http://www.tibco.com/TrackShipment/#wsdl.interface(TrackShipment)" scaext:wsdlLocation="../../ES_Common_Model_SH/Service%20Descriptors/TrackShipment.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

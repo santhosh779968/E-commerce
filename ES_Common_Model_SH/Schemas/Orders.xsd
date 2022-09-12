@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.org/Orders" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.org/Orders">
+
+    <element name="Orders" type="tns:OrdersType"></element>
+    
+    <element name="Order" type="tns:OrderType"></element>
+    
+    <complexType name="OrderType">
+    	<sequence>
+    		<element name="ORDER_ID" type="string"></element>
+    		<element name="CUSTOMER_ID" type="string"></element>
+    		<element name="PRODUCT_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="QUANTITY" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="LIST_PRICE" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DISCOUNT" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORDER_STATUS" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORDER_DATE" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="REQUIRED_DATE" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="SHIPPED_DATE" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="OrdersType">
+    	<sequence>
+    		<element name="Order" type="tns:OrderType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <element name="OrderID" type="tns:OrderIDType"></element>
+    
+    <complexType name="OrderIDType">
+    	<sequence>
+    		<element name="OrderID" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="OrderShimentReq" type="tns:OrderShipmentReqType"></element>
+
+    <complexType name="OrderShipmentReqType">
+    	<sequence>
+    		<element name="OrderID" type="string"></element>
+    		<element name="Status" type="string"></element>
+    	</sequence>
+    </complexType>
+</schema>

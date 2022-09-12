@@ -1,0 +1,50 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/ES_BS_ProductManagement/Service Descriptors/es_bs_productmanagement.GetProducts-GetProducts.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model_SH/Schemas/Products.xsd",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Products"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_ProductManagement/Service Descriptors/es_bs_productmanagement.GetProducts-GetProducts.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model_SH/Schemas/Products.xsd",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Products"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_ProductManagement/Service Descriptors/es_bs_productmanagement.GetProducts-GetProducts.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model_SH/Schemas/Products.xsd",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Products"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_ProductManagement/Service Descriptors/es_bs_productmanagement.GetProducts-GetProducts.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model_SH/Schemas/Products.xsd",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Products"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_ProductManagement/Service Descriptors/es_bs_productmanagement.GetProducts-GetProducts.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model_SH/Schemas/Products.xsd",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Products"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_ProductManagement/Service Descriptors/es_bs_productmanagement.GetProducts-GetProducts.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model_SH/Schemas/Products.xsd",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Products"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_ProductManagement/Service Descriptors/es_bs_productmanagement.GetIndividualProduct-GetIndividualProduct.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model_SH/Schemas/Products.xsd",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Products"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_ProductManagement/Service Descriptors/es_bs_productmanagement.GetIndividualProduct-GetIndividualProduct.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model_SH/Schemas/Products.xsd",
+        "xsdSchemaTargetNamespace": "http://www.eniquesolutions.org/Products"
+    }
+]}

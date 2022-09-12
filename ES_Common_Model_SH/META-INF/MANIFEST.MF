@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ES_Common_Model Module
+Bundle-SymbolicName: ES_Common_Model_SH
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-Edition: bwe
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tibco.bw.module; filter:="(&(name=ES_SessionHander_SH)(version=1.0.0))",com.tibco.bw.sharedresource.model; filter:="(name=bw.dataformat)",com.tibco.bw.sharedresource.model; filter:="(name=bw.httpconnector)",com.tibco.bw.sharedresource.model; filter:="(name=bw.jdbc)",com.tibco.bw.sharedresource.model; filter:="(name=bw.jmsconnection)"
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Provide-Capability: com.tibco.bw.module; name="ES_Common_Model_SH"; version:Version="1.0.0",
+ com.tibco.bw.schemas; ns="http://www.eniquesolutions.com/Customers",
+ com.tibco.bw.schemas; ns="http://www.eniquesolutions.com/FileInput",
+ com.tibco.bw.schemas; ns="http://www.eniquesolutions.com/Product_Management",
+ com.tibco.bw.schemas; ns="http://www.eniquesolutions.com/ResponseStatus",
+ com.tibco.bw.schemas; ns="http://www.eniquesolutions.com/TrackShipment",
+ com.tibco.bw.schemas; ns="http://www.eniquesolutions.org/Categories",
+ com.tibco.bw.schemas; ns="http://www.eniquesolutions.org/Orders",
+ com.tibco.bw.schemas; ns="http://www.eniquesolutions.org/Products",
+ com.tibco.bw.wsdls; ns="http://www.eniquesolutions.com/Abstract/ProductManagement/",
+ com.tibco.bw.wsdls; ns="http://www.eniquesolutions.com/OrderManagement/",
+ com.tibco.bw.wsdls; ns="http://www.eniquesolutions.com/UserOnBoarding/",
+ com.tibco.bw.wsdls; ns="http://www.tibco.com/TrackShipment/",
+ com.tibco.bw.resources; name="es_common_model"
+TIBCO-BW-Version: 6.8.0 V55 2021-11-10
